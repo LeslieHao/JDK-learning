@@ -6,7 +6,7 @@ import java.util.Optional;
  * @author HaoHao
  * @date 2018/10/28下午10:47
  */
-public class Lambda {
+public class mLambda {
 
     // @FunctionalInterface
     // 函数式接口

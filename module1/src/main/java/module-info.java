@@ -4,6 +4,7 @@
 module module1{
     // 依赖
     requires junit;
+    requires fastjson;
 
     //导出
     exports com.hh.jdk9;
