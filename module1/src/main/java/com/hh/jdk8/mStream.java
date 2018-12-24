@@ -156,10 +156,12 @@ public class mStream {
     /**
      * 并行流,基于Fork—Join 框架
      * Fork—Join框架会将任务分发给线程池中的工作线程。
+     * 但是依然是阻塞的,只是将任务分解给多个线程
      */
     @Test
     public void test_parallo(){
         Stream<String> lyric = Stream.of("hello", " ", "from", " ", "the", " ", "other", " ", "side", "!");
         lyric.parallel().forEach(System.out::print);
+        System.out.println("end");
     }
 }
