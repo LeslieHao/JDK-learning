@@ -34,11 +34,17 @@ public class mOptional {
         Optional.ofNullable(u1)
                 .flatMap(user -> Optional.ofNullable(user.getName())).orElse("JACK");
 
-        String name = Optional.ofNullable(u1)
+        byte[] bytes = Optional.ofNullable(u1)
                 .map(User::getName)
-                .orElse("JACK");
+                .map(String::getBytes)
+                .orElse(null);
 
+        String s1 = Optional.ofNullable(u1)
+                .flatMap(user -> Optional.ofNullable(user.getName()))
+                .map(s -> s)
+                .orElse("");
     }
+
 
     private User createNewUser() {
         System.out.println("create new user");
