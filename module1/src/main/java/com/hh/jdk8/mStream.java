@@ -164,4 +164,5 @@ public class mStream {
         lyric.parallel().forEach(System.out::print);
         System.out.println("end");
     }
+
 }
