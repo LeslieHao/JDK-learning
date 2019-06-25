@@ -19,7 +19,6 @@ public class mLambda {
     Action action =
             System.out::println;
 
-
     private static void me(Action a, String s) {
         a.say(s);
     }

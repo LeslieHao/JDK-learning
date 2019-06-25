@@ -38,6 +38,16 @@ public class User extends Base {
     }
 
     @Override
+    public boolean equals(Object obj) {
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return 10086;
+    }
+
+    @Override
     public String toString() {
         return JSON.toJSONString(this);
     }
