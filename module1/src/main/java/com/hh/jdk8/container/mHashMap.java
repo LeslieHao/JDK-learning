@@ -1,4 +1,4 @@
-package com.hh.jdk8;
+package com.hh.jdk8.container;
 
 import com.hh.common.type.User;
 import org.junit.Test;

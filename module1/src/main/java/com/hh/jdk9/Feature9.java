@@ -1,7 +1,5 @@
 package com.hh.jdk9;
 
-import java.util.List;
-
 import org.junit.Test;
 
 
@@ -14,7 +12,7 @@ public class Feature9 {
     // 不可变集合类的工厂方法
     @Test
     public void immutableCollections() {
-        List list = List.of();
+        //List list = List.of();
     }
 
 
