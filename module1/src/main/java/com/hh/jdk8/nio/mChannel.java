@@ -4,7 +4,6 @@ import org.junit.Test;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
 import java.nio.file.Paths;
@@ -23,7 +22,6 @@ public class mChannel {
         // 文件流打开通道
         FileInputStream fis = new FileInputStream(new File(""));
         FileChannel channel = fis.getChannel();
-
         // 静态放款获取通道
         FileChannel.open(Paths.get(""), StandardOpenOption.WRITE);
 
