@@ -28,6 +28,9 @@ public class Server {
         // 绑定tcp 端口
         serverSocketChannel.socket().bind(new InetSocketAddress(port));
         // get a selector
+        // windows ->iocp
+        // mac ->kqueue
+        // linux ->epoll
         this.selector = Selector.open();
         /*
          OP_ACCEPT:ServerSocketChannel的有效事件,服务端收到客户端的一个连接请求会触发
@@ -44,8 +47,8 @@ public class Server {
         System.out.println("server listen start~");
         while (true) {
             // select 事件
-            System.out.println("select return :" + selector.select());
-            // todo 返回就绪的通道? 还是所有注册的通道?
+            System.out.println("server select return :" + selector.select());
+            // 返回就绪的通道
             Set<SelectionKey> selectionKeys = selector.selectedKeys();
             // 遍历
             Iterator<SelectionKey> iterator = selectionKeys.iterator();
@@ -71,10 +74,11 @@ public class Server {
                     // 可读通道
                     SocketChannel readChannel = (SocketChannel) selectionKey.channel();
                     // buffer
-                    ByteBuffer byteBuffer = ByteBuffer.allocate(1 << 10);
+                    ByteBuffer byteBuffer = ByteBuffer.allocate(1 << 8);
                     // 读数据到buffer 中
                     readChannel.read(byteBuffer);
-                    System.out.println("server 收到客户端消息:" + new String(byteBuffer.array(), StandardCharsets.UTF_8));
+                    byteBuffer.flip();
+                    System.out.println("server 收到客户端消息:" + new String(byteBuffer.array(), StandardCharsets.UTF_8).trim());
                     // 回调客户端
                     readChannel.write(ByteBuffer.wrap("服务端已经收到消息".getBytes(StandardCharsets.UTF_8)));
                     Thread.sleep(2000);

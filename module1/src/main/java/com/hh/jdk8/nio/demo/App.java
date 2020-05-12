@@ -2,7 +2,6 @@ package com.hh.jdk8.nio.demo;
 
 import lombok.SneakyThrows;
 
-import java.io.IOException;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -24,7 +23,7 @@ public class App {
             }, (r, executor) -> System.out.println("reject~"));
 
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         THREAD_POOL.execute(new Runnable() {
             @SneakyThrows
             @Override

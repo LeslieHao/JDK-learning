@@ -34,7 +34,7 @@ public class Client {
     public void listen() throws IOException, InterruptedException {
         System.out.println("client listen start~");
         while (true) {
-            selector.select();
+            System.out.println("client select return " + selector.select());
             Set<SelectionKey> selectionKeys = selector.selectedKeys();
             Iterator<SelectionKey> iterator = selectionKeys.iterator();
             while (iterator.hasNext()) {
@@ -60,10 +60,11 @@ public class Client {
                     // 可读通道
                     SocketChannel readChannel = (SocketChannel) selectionKey.channel();
                     // buffer
-                    ByteBuffer byteBuffer = ByteBuffer.allocate(1 << 10);
+                    ByteBuffer byteBuffer = ByteBuffer.allocate(1 << 8);
                     // 读数据到buffer 中
                     readChannel.read(byteBuffer);
-                    System.out.println("client 收到服务端端消息:" + new String(byteBuffer.array(),StandardCharsets.UTF_8));
+                    byteBuffer.flip();
+                    System.out.println("client 收到服务端端消息:" + new String(byteBuffer.array(),StandardCharsets.UTF_8).trim());
                     // 回调客户端
                     readChannel.write(ByteBuffer.wrap("客户端已经收到消息".getBytes(StandardCharsets.UTF_8)));
                     Thread.sleep(2000);
