@@ -20,7 +20,7 @@ public class mHashMap {
      * 但是这样的只取低位的话,碰撞问题会很严重
      * 所以对hash 值右移16位 把高位降下来. 自己的高位区和低位区 做异或运算 加大随机性.
      */
-    static final int hash(Object key) {
+    static int hash(Object key) {
         int h;
         return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
     }
