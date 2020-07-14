@@ -1,4 +1,4 @@
-package com.hh.jdk8.concurrent.toilet;
+package com.hh.jdk8.concurrent.semaphore;
 
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicInteger;

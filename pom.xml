@@ -21,7 +21,6 @@
         </plugins>
     </build>
     <modules>
-        <module>module2</module>
         <module>module1</module>
     </modules>
 

@@ -1,6 +1,6 @@
-package com.hh.jdk8.concurrent.toilet;
+package com.hh.jdk8.concurrent.semaphore;
 
-import com.hh.jdk8.concurrent.ToiletThreadPool;
+import com.hh.jdk8.concurrent.ThreadPool;
 import lombok.SneakyThrows;
 
 import java.util.concurrent.ExecutorService;
@@ -14,7 +14,7 @@ public class Monitor {
 
     public static void main(String[] args) {
         Toilet toilet = Toilet.get();
-        ExecutorService executor = ToiletThreadPool.get();
+        ExecutorService executor = ThreadPool.get();
         executor.submit(new Runnable() {
             @SneakyThrows
             @Override
