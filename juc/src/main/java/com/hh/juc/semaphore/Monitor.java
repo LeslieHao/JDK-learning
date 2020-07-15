@@ -6,6 +6,8 @@ import lombok.SneakyThrows;
 import java.util.concurrent.ExecutorService;
 
 /**
+ * 厕所监视器
+ *
  * @author HaoHao
  * @date 2020/7/13 8:21 下午
  */
