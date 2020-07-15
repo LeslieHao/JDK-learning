@@ -17,8 +17,8 @@ public class ThreadPool {
         if (threadPool == null) {
             synchronized (ThreadPool.class) {
                 if (threadPool == null) {
+                    // cpu核心线程数
                     int availProcessors = Runtime.getRuntime().availableProcessors();
-                    System.out.println("内核数:" + availProcessors);
                     threadPool = ThreadPoolManager.createThreadPoolExecutor("线程池", availProcessors * 2, availProcessors * 6, 1000);
                 }
             }

@@ -1,4 +1,4 @@
-package com.hh.base.type;
+package com.hh.common.type;
 
 
 import com.alibaba.fastjson.JSON;

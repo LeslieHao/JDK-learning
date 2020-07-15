@@ -25,5 +25,6 @@ public class WorkShop {
         System.out.println("组装任务下发完毕~ time:" + LocalDateTime.now());
         WORK_SHOP_MANAGER.await();
         System.out.println("车辆组装完成~ time:" + LocalDateTime.now());
+        System.exit(1);
     }
 }
