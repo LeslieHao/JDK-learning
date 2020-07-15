@@ -5,6 +5,8 @@ import lombok.SneakyThrows;
 import java.util.concurrent.CyclicBarrier;
 
 /**
+ * 明星
+ *
  * @author HaoHao
  * @date 2020/7/15 2:31 下午
  */
