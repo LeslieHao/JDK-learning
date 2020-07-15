@@ -1,6 +1,6 @@
 package com.hh.base;
 
-import com.hh.base.type.User;
+import com.hh.common.type.User;
 import org.junit.Test;
 
 import java.util.Optional;

@@ -1,6 +1,7 @@
 package com.hh.juc;
 
-import com.hh.base.type.User;
+
+import com.hh.common.type.User;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
